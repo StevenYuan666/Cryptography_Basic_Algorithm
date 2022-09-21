@@ -16,7 +16,7 @@ def jacob_symbol(a, b):
         bmod8 = b % 8
         newa = a / 2
         print(f"even ----- a/2 = {newa} ----- {b} mod 8 = {bmod8}")
-        if bmod8 == 1 or bmod8 == b-1:
+        if bmod8 == 1 or bmod8 == 7:
             print(f"jaco({newa}, {b}) \n")
             return jacob_symbol(newa, b)
         else:
