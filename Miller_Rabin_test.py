@@ -14,14 +14,15 @@ def miller_rabin(N, k):
         x = pow(a, u, N)
         if x == 1 or x == N-1:
             continue
-        for _ in range(r - 1):
-            x = pow(x, 2, N)
+        else:
+            for _ in range(r - 1):
+                x = pow(x, 2, N)
+                if x != N-1:
+                    continue
+                if x == N-1:
+                    break
             if x != N-1:
-                continue
-            if x == N-1:
-                break
-        if x != N-1:
-            return [a, "Composite"]
+                return [a, "Composite"]
 
     return [a, "Prime"]
 
